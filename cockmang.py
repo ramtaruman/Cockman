@@ -62,7 +62,7 @@ game_over=False
 print(correct_word)
 for i in range(len(correct_word)):
     dashlist.append("_")
-rounds=7 
+rounds=6
 correct=False
 while(not(game_over==True)):
     correct=False   
@@ -73,6 +73,7 @@ while(not(game_over==True)):
             correct=True
     if(correct==False):
         rounds-=1
+        print(stages[len(stages)-rounds-1])
     print(dashlist)
     
     print("Remaining lives: ",rounds)
