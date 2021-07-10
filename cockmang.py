@@ -58,12 +58,13 @@ stages = ['''
       |
 =========
 ''']
+game_over=False
 print(correct_word)
 for i in range(len(correct_word)):
     dashlist.append("_")
-rounds=5 
+rounds=7 
 correct=False
-for round in range(len(correct_word)+7):
+while(not(game_over==True)):
     correct=False   
     guess=input().lower()
     for i in range(len(dashlist)):
@@ -77,11 +78,10 @@ for round in range(len(correct_word)+7):
     print("Remaining lives: ",rounds)
     if(not(rounds>0)):
         print("you lost")
+        game_over=True
         exit()
     if("_") not in dashlist:
-        print("you win") 
+        print("you win")
+        game_over=True 
         exit()
-if("_") in dashlist:
-    print("you lost")
-    exit()
 
